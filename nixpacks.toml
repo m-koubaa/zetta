@@ -1,0 +1,14 @@
+[phases.setup]
+nixPkgs = ['php82', 'php82Extensions.pdo', 'php82Extensions.pdo_mysql', 'nodejs']
+
+[phases.build]
+cmds = [
+  'cd zetta_api && composer install --no-dev --optimize-autoloader',
+  'cd zetta_api && php artisan config:cache',
+  'cd zetta_api && php artisan route:cache',
+  'cd zetta-api && php artisan view:cache',
+  'cd zetta_ui && npm ci && npm run build'
+]
+
+[start]
+cmd = 'cd zetta_api && php artisan serve --host=0.0.0.0 --port=$PORT'

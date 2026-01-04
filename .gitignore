@@ -1,0 +1,16 @@
+# Laravel
+/zetta_api/vendor/
+/zetta_api/node_modules/
+/zetta_api/.env
+/zetta_api/storage/*.key
+/zetta_api/storage/logs/*.log
+
+# React
+/zetta_ui/node_modules/
+/zetta_ui/dist/
+/zetta_ui/build/
+/zetta_ui/.env.local
+
+# Autres
+.DS_Store
+*.log
